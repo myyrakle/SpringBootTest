@@ -1,6 +1,6 @@
 package com.myyrakle.springboot_test.config;
 
-import com.myyrakle.springboot_test.service.LoginService;
+/*import com.myyrakle.springboot_test.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,10 +15,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-@AllArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter
+@AllArgsConstructor*/
+public class SecurityConfig// extends WebSecurityConfigurerAdapter
 {
-    @Bean
+   /* @Bean
     public PasswordEncoder passwordEncoder()
     {
         return new BCryptPasswordEncoder();
@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     {
         httpSecurity.authorizeRequests()
                 //이 페이지는 ADMIN만 접근 가능
+                .antMatchers("/templates/index.html").permitAll()
                 .antMatchers("/").permitAll()
                 .antMatchers("/admin_page").hasRole("ADMIN")
                 //나머지는 전부 접근가능
@@ -59,5 +60,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     public void configure(AuthenticationManagerBuilder authentication) throws Exception
     {
         authentication.userDetailsService(loginService).passwordEncoder(passwordEncoder());
-    }
+    }*/
 }
